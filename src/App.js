@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Radium from 'radium';
+// import Radium, { StyleRoot } from 'radium';
 import './App.css';
 import Validation from './ValidationComponent/Validation';
 import Char from './CharComponent/CharComponent';
@@ -91,7 +91,11 @@ class App extends Component {
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      // ':hover': {
+      //   backgroundColor: 'lightgreen',
+      //   color: 'black'
+      // }
     };
 
     var persons = null;
@@ -123,6 +127,10 @@ class App extends Component {
                   </div>
                 );
       style.backgroundColor = 'red';
+      // style[':hover'] = {
+      //   backgroundColor: 'salmon',
+      //   color: 'white'
+      // };
     }
     else 
       persons = null;
@@ -145,6 +153,7 @@ class App extends Component {
     }
 
     return (
+      // <StyleRoot>
       <div className="App">
         <h1>Hi, I am a react app.</h1>
         <p className={classes.join(' ')}>This is really working!</p>
@@ -160,29 +169,13 @@ class App extends Component {
           </button>
         </div>
         {persons}
-        {/* { this.state.showPersons ?
-            <div>
-              <Person 
-                name={this.state.persons[0].name} 
-                age={this.state.persons[0].age}/>
-              <Person 
-                changed={this.nameChangedHandler}
-                name={this.state.persons[1].name} 
-                age={this.state.persons[1].age}
-                click={this.switchNameHandler.bind(this, 'Namita')}>My Hobbies:Racing</Person>
-              <Person 
-                name={this.state.persons[2].name} 
-                age={this.state.persons[2].age}/> 
-            </div> : null
-        }   */}
-        {/* 
-        Not the preffered way of doing it, above way in which we use if else statement outside return is better,
-        we cant use js code inside jsX part that is why we couldnt use if else in here. */}
       </div>
+      // </StyleRoot>
       //expression above can't use if else but can use ternary conditional operators
       // return React.createElement('div', {className: 'App'}, React.createElement('h1',null,'This is same as above'));
     );
   }
 }
 
-export default Radium(App);
+// export default Radium(App);
+export default App;
