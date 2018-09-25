@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import Radium, { StyleRoot } from 'radium';
-import './App.css';
+import classes from './App.css';
 import Validation from './ValidationComponent/Validation';
 import Char from './CharComponent/CharComponent';
 import Person from './Person/Person';
@@ -85,19 +85,19 @@ class App extends Component {
   }
 
   render() {
-    const style = {
-      backgroundColor: 'green',
-      color: 'white',
-      font: 'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-      // ':hover': {
-      //   backgroundColor: 'lightgreen',
-      //   color: 'black'
-      // }
-    };
-
+    // const style = {
+    //   backgroundColor: 'green',
+    //   color: 'white',
+    //   font: 'inherit',
+    //   border: '1px solid blue',
+    //   padding: '8px',
+    //   cursor: 'pointer',
+    //   ':hover': {
+    //     backgroundColor: 'lightgreen',
+    //     color: 'black'
+    //   }
+    // };
+    let btnClass = '';
     var persons = null;
     if(this.state.showPersons) {
       persons = (
@@ -126,11 +126,12 @@ class App extends Component {
                       age={this.state.persons[2].age}/>  */}
                   </div>
                 );
-      style.backgroundColor = 'red';
+      // style.backgroundColor = 'red';
       // style[':hover'] = {
       //   backgroundColor: 'salmon',
       //   color: 'white'
       // };
+      btnClass = classes.Red;
     }
     else 
       persons = null;
@@ -143,20 +144,20 @@ class App extends Component {
       })
     );
 
-    let classes= []; 
+    let assignedclasses= []; 
     if(this.state.persons.length <= 2) {
-      classes.push('red');
+      assignedclasses.push(classes.red);
     }
 
     if(this.state.persons.length <= 1) {
-      classes.push('bold');
+      assignedclasses.push(classes.bold);
     }
 
     return (
       // <StyleRoot>
-      <div className="App">
+      <div className={classes.App}>
         <h1>Hi, I am a react app.</h1>
-        <p className={classes.join(' ')}>This is really working!</p>
+        <p className={assignedclasses.join(' ')}>This is really working!</p>
         { /* Dont use this syntax, use the one in click event below */ }
         <input type="text" onChange={(event) => this.showLengthHandler(event)}/>
         <p>{this.state.txt_len}</p>
@@ -164,7 +165,7 @@ class App extends Component {
         {char_divs}
         <div>
           <button 
-            style={style}
+            className={btnClass}
             onClick={() => this.togglePersonsHandler()}>Toggle Persons
           </button>
         </div>
