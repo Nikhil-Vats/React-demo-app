@@ -1,0 +1,10 @@
+1. To Which Events Can You Listen?
+   Section 3, Lecture 41
+   In the last lecture, we saw that you can react to the onClick event - but to which other events can you listen?
+   You can find a list of supported events here: https://reactjs.org/docs/events.html#supported-events
+
+
+2. Arrow functions let us use this keyword in them, in normal functions we can't use it.
+
+3. Whenever we change the rendered component using a button or something the whole render() function runs again 
+   and not just the return part.

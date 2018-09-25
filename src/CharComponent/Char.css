@@ -1,0 +1,12 @@
+.char {
+    height: 40px;
+    width: 30px;
+    padding:5px;
+    margin: 5px;
+    font-size: 20px;
+    display: inline-block;
+    text-align: center;
+    background: grey;
+    /* color: white; */
+    border: 1px solid blue;
+}
