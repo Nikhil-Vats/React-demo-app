@@ -8,3 +8,5 @@
 
 3. Whenever we change the rendered component using a button or something the whole render() function runs again 
    and not just the return part.
+
+4. Use source maps and breakpoints and debugger to fix logical errors.
